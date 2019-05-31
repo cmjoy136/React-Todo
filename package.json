@@ -2,7 +2,7 @@
   "name": "todos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cmjoy.gitlab.io/assessment---todo-app-part-1",
+  "homepage": "https://cmjoy.gitlab.io/todo-pt2",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
