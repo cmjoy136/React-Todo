@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { checkItem, deleteItem } from '../actions/actions'
+
 
 class TodoItem extends Component {
     render() {
@@ -9,14 +12,17 @@ class TodoItem extends Component {
               className="toggle"
               type="checkbox"
               checked={this.props.completed}
-              onClick={this.props.checkItem}
+              onChange={ () => this.props.checkItem(this.props.todoId)}
             />
             <label>{this.props.title}</label>
-            <button onClick={this.props.deleteItem} className="destroy" />
+            <button onClick={() => this.props.deleteItem(this.props.todoId)} className="destroy" />
           </div>
         </li>
       );
     }
   }
 
-  export default TodoItem;
+  export default connect(
+    null, 
+    {checkItem, deleteItem}
+  ) (TodoItem);
